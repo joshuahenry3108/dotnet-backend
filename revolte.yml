@@ -1,0 +1,35 @@
+revolte:
+  version: '1.0'
+  project: Project-QA
+  appName: dotnet-backend
+  env:
+    qa:
+      branch: main
+      services:
+        rid_1:
+          name: dotnetbe-service
+          type: WEB_SERVICE
+          entryPoint: Program.cs
+          specifications:
+            cpu: 2
+            memory: 2
+            storage: 30
+          properties:
+            health: /health
+            port: 8080
+            variables:
+              BASE_URL: /api/v1
+              DATABASE_URL: '#{dotnet-service-db.dbUrl}'
+              DATABASE_PORT: '#{dotnet-service-db.dbPort}'
+              DATABASE_USERNAME: '#{dotnet-service-db.dbUsername}'
+              DATABASE_PASSWORD: '#{dotnet-service-db.dbPassword}'
+              DATABASE_NAME: 'MYSQL'
+              THIRD_PARTY_URL: "https://testtt.requestcatcher.com/"
+        rid_2:
+          name: dotnet-service-db
+          type: DATABASE
+          specifications:
+            cpu: 2
+            memory: 2
+            storage: 30
+            engine: mysql
