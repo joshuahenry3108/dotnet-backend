@@ -3,8 +3,8 @@ revolte:
   project: Revolte
   appName: Repo management
   env:
-    qa:
-      branch: main
+    staging:
+      branch: dotnet-staging
       services:
         rid_1:
           name: repo-service
