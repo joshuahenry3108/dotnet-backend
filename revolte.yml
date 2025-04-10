@@ -1,13 +1,13 @@
 revolte:
   version: '1.0'
-  project: Project-QA
-  appName: dotnet-backend
+  project: Revolte
+  appName: Repo management
   env:
     qa:
       branch: main
       services:
         rid_1:
-          name: dotnetbe-service
+          name: repo-service
           type: WEB_SERVICE
           entryPoint: Program.cs
           specifications:
